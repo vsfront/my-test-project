@@ -3,7 +3,8 @@ stages:
 
 mirror_clone:
   stage: mirror_clone
-
+  tags: [backend]
+  
   before_script:
       - mkdir -p ~/.ssh/
       - echo "$GITHUB_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
