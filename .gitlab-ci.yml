@@ -2,6 +2,7 @@ stages:
   - mirror_clone
 
 mirror_clone:
+  image: bitnami/git
   stage: mirror_clone
   tags: [backend]
   
