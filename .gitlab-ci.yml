@@ -1,3 +1,6 @@
+stages:
+  - mirror_clone
+
 mirror_clone:
   stage: mirror_clone
 
