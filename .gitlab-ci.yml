@@ -19,4 +19,4 @@ mirror_clone:
       
   script:
       - git clone https://${GITLAB_TOKEN_NAME}:${GITLAB_TOKEN}@git.appkode.ru/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}.git 
-      - cd ${CI_PROJECT_NAME} && git checkout ${CI_COMMIT_BRANCH} && git filter-branch -f --commit-filter 'GIT_AUTHOR_NAME="test"; GIT_AUTHOR_EMAIL="test@example.com"; GIT_COMMITER_NAME="test"; GIT_COMMITTER_EMAIL="test@example.com"; git commit-tree "$@";' HEAD && git push --mirror -f git@github.com:${GITHUB_USER}/${CI_PROJECT_NAME}.git
+      - cd ${CI_PROJECT_NAME} && git checkout ${CI_COMMIT_BRANCH} && git filter-branch -f --commit-filter 'GIT_AUTHOR_NAME="${GIT_AUTHOR_NAME}"; GIT_AUTHOR_EMAIL="${GIT_AUTHOR_EMAIL}"; GIT_COMMITER_NAME="${GIT_COMMITER_NAME}"; GIT_COMMITTER_EMAIL="${GIT_COMMITTER_EMAIL}"; git commit-tree "$@";' HEAD && git push --mirror -f git@github.com:${GITHUB_USER}/${CI_PROJECT_NAME}.git
