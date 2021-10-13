@@ -4,7 +4,7 @@ stages:
 mirror_clone:
   image: bitnami/git
   only:
-    - ${GITLAB_MAIN_BRANCH}
+    - main
   stage: mirror_clone
   tags: [backend]
   
